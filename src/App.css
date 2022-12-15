@@ -1,0 +1,105 @@
+.App {
+  text-align: center;
+  height: 100vh;
+  background-color: #ffe4e3;
+}
+li {
+  list-style: none;
+}
+h4 {
+  color: white;
+}
+input {
+  width: 220px;
+  height: 30px;
+  margin: 5px;
+  padding-left: 5px;
+}
+
+form {
+  border: #000 1px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fc8381;
+  padding: 20px;
+  margin: 10px;
+}
+.header {
+  background-color: #fff;
+}
+.pix {
+  height: 40px;
+  background-color: #fc8381;
+  padding: 15px;
+}
+.div-form {
+  border: #000 1px solid;
+}
+.apresentation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fc8381;
+  padding: 70px;
+  text-align: center;
+  align-content: center;
+  color: #fff;
+}
+.images {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+.card {
+  width: 100%;
+}
+
+.text-card {
+  width: 40%;
+  padding: 10px;
+}
+.card-number {
+  display: flex;
+  flex-direction: column;
+  border: #000 1px solid;
+  padding: 10px;
+  cursor: pointer;
+}
+.valor-rifa {
+  color: #000;
+}
+.grid-numbers {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding: 10px;
+}
+.free {
+  background-color: #fc8381;
+}
+.reserved {
+  background-color: yellow;
+}
+.sell {
+  background-color: green;
+}
+@media screen and (max-width: 900px) {
+  .apresentation {
+    flex-direction: column;
+    padding: 15px;
+  }
+  .images {
+    width: 100%;
+  }
+  .text-card {
+    width: 100%;
+  }
+  input {
+    width: 90%;
+    height: 30px;
+    margin: 5px;
+    padding-left: 5px;
+  }
+}
