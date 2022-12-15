@@ -10,12 +10,15 @@ h4 {
   color: white;
 }
 input {
-  width: 220px;
+  width: 320px;
   height: 30px;
   margin: 5px;
   padding-left: 5px;
 }
-
+button {
+  cursor: pointer;
+  padding: 10px;
+}
 form {
   border: #000 1px solid;
   display: flex;
@@ -35,6 +38,8 @@ form {
 }
 .div-form {
   border: #000 1px solid;
+  width: 50%;
+  background-color: #fc8381;
 }
 .apresentation {
   display: flex;
@@ -55,6 +60,10 @@ form {
 
 .card {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
 }
 
 .text-card {
@@ -109,5 +118,8 @@ form {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+  }
+  .div-form {
+    width: 80%;
   }
 }

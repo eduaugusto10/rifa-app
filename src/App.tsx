@@ -11,7 +11,7 @@ interface RifaNum {
   numbers: number
 }
 function App() {
-
+  const pixKey = "1283754857373628473583"
   const [rifaNumbers, setRifaNumbers] = useState<Rifa[]>([])
   const [numberIMG, setNumberIMG] = useState<number>(1)
   const [chooseNumber, setChooseNumber] = useState<RifaNum[]>([])
@@ -20,7 +20,7 @@ function App() {
   const emailRef = useRef<HTMLInputElement | null>(null)
   const cpfRef = useRef<HTMLInputElement | null>(null)
   const phoneRef = useRef<HTMLInputElement | null>(null)
-
+  const [textCopy, setTextCopy] = useState<String>("copiar")
   useEffect(() => {
     const interval = setInterval(() => {
       numberIMG < 6 ? setNumberIMG((previous) => previous + 1) : setNumberIMG(1)
@@ -38,21 +38,21 @@ function App() {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    console.log(nameRef.current?.value)
-    for (let i = 0; i < chooseNumber.length; i++) {
-      try {
-        api.put(`/rifa/${chooseNumber[i].numbers}`, {
-          name: nameRef.current?.value,
-          email: emailRef.current?.value,
-          cpf: cpfRef.current?.value,
-          phone: phoneRef.current?.value,
-          status: "Reservado"
-        }).then(res => console.log(res))
-          .catch(error => console.log(error))
-      } catch (error) {
-        console.log(error)
+    if (nameRef.current?.value != null && emailRef.current?.value != null) {
+      for (let i = 0; i < chooseNumber.length; i++) {
+        try {
+          api.put(`/rifa/${chooseNumber[i].numbers}`, {
+            name: nameRef.current?.value,
+            email: emailRef.current?.value,
+            cpf: cpfRef.current?.value,
+            phone: phoneRef.current?.value,
+            status: "Reservado"
+          }).then(res => console.log(res))
+            .catch(error => console.log(error))
+        } catch (error) {
+          console.log(error)
+        }
       }
-
     }
     setChange(previous => !previous)
 
@@ -100,22 +100,31 @@ function App() {
         <h3>Número(s) escolhido(s): </h3>
         <h3>Valor total: R$ {chooseNumber.length > 0 ? (chooseNumber.length * 20).toFixed(2) : "0.00"} </h3>
         {!change && (
-          <form onSubmit={handleSubmit}>
-            <h5>Insira seus dados para reservar</h5>
-            <input type={'text'} placeholder="Nome" ref={nameRef} maxLength={35} />
-            <input type={'text'} placeholder="E-mail" ref={emailRef} maxLength={80} />
+          <form className='div-form' onSubmit={handleSubmit}>
+            <h3>Insira seus dados para reservar</h3>
+            <input type={'text'} placeholder="Nome*" ref={nameRef} maxLength={35} required />
+            <input type={'text'} placeholder="E-mail*" ref={emailRef} maxLength={80} required />
             <input type={'number'} placeholder="Telefone" ref={phoneRef} />
             <input type={'number'} placeholder="CPF" ref={cpfRef} />
             <input type={'submit'} value="Reservar" style={{ cursor: 'pointer' }} />
+            <span style={{ "fontSize": "13px" }}>Nome e e-mail são obrigatórios</span>
           </form>
         )}
         {change && (
           <div className='div-form'>
             <h3>Número(s) reservado(s) com sucesso!</h3>
-            <h3>Agora faça um PIX para a seguinte chave:</h3>
-            <h3>Chave PIX</h3>
-            <h3 className='pix'>12938495684649645823249</h3>
-            <h3>Após fazer o PIX, envie o comprovante para meu insta.</h3>
+            <h3>Para finalizar faça o PIX no valor acima</h3>
+            <button
+              onClick={() => {
+                navigator.clipboard.writeText(pixKey)
+                setTextCopy("copiado!")
+              }}>Chave PIX: {pixKey}
+              <span style={{ "fontSize": "10px", backgroundColor: "#fff" }}> {textCopy} </span>
+            </button>
+            <ul className='pix'>
+              <li>Digite esse número na descrição do seu PIX: 1234</li>
+              <li>E assim conseguiremos confirmar o pagamento</li>
+            </ul>
           </div>
         )}
         <h3>Regras da rifa</h3>
