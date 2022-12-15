@@ -51,7 +51,7 @@ function App() {
             cpf: cpfRef.current?.value,
             phone: phoneRef.current?.value,
             status: "Reservado",
-            order: orders
+            order: orderGen
           }).then(res => console.log(res))
             .catch(error => console.log(error))
         } catch (error) {
