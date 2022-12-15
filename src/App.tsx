@@ -5,7 +5,8 @@ import api from './services/api';
 interface Rifa {
   id: number,
   status: string,
-  name: string
+  name: string,
+  order: number
 }
 interface RifaNum {
   numbers: number
@@ -16,6 +17,7 @@ function App() {
   const [numberIMG, setNumberIMG] = useState<number>(1)
   const [chooseNumber, setChooseNumber] = useState<RifaNum[]>([])
   const [change, setChange] = useState<Boolean>(false)
+  const [orders, setOrders] = useState<number>()
   const nameRef = useRef<HTMLInputElement | null>(null)
   const emailRef = useRef<HTMLInputElement | null>(null)
   const cpfRef = useRef<HTMLInputElement | null>(null)
@@ -39,6 +41,8 @@ function App() {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (nameRef.current?.value != null && emailRef.current?.value != null) {
+      const orderGen = Math.round(Math.random() * (99999 - 0 + 1) + 0)
+      setOrders(orderGen)
       for (let i = 0; i < chooseNumber.length; i++) {
         try {
           api.put(`/rifa/${chooseNumber[i].numbers}`, {
@@ -46,7 +50,8 @@ function App() {
             email: emailRef.current?.value,
             cpf: cpfRef.current?.value,
             phone: phoneRef.current?.value,
-            status: "Reservado"
+            status: "Reservado",
+            order: orders
           }).then(res => console.log(res))
             .catch(error => console.log(error))
         } catch (error) {
@@ -122,7 +127,7 @@ function App() {
               <span style={{ "fontSize": "10px", backgroundColor: "#fff" }}> {textCopy} </span>
             </button>
             <ul className='pix'>
-              <li>Insira na descrição do PIX: <span className='stronger'> 1234</span></li>
+              <li>Insira na descrição do PIX: <span className='stronger'>{orders}</span></li>
               <li>E assim conseguiremos identificar o pagamento</li>
             </ul>
           </div>
