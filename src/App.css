@@ -65,7 +65,7 @@ form {
   display: flex;
   flex-direction: column;
   border: #000 1px solid;
-  padding: 10px;
+  padding: 5px;
   cursor: pointer;
 }
 .valor-rifa {
@@ -85,6 +85,7 @@ form {
 .sell {
   background-color: green;
 }
+
 @media screen and (max-width: 900px) {
   .apresentation {
     flex-direction: column;
@@ -101,5 +102,12 @@ form {
     height: 30px;
     margin: 5px;
     padding-left: 5px;
+  }
+  .name-buy {
+    display: block;
+    width: 75px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 }

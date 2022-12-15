@@ -90,9 +90,9 @@ function App() {
       <div className="grid-numbers">
         {rifaNumbers && rifaNumbers.map((rifa, index) => (
           <div className={`card-number ${rifa.status === "Vendido" ? 'sell' : rifa.status === "Reservado" ? 'reserved' : 'free'}`} key={index} onClick={() => handleReserve(index)}>
-            <span>{rifa.status}</span>
+            <span >{rifa.status}</span>
             <span>{rifa.id}</span>
-            <span>{rifa.name}</span>
+            <span className='name-buy'>{rifa.name.split(" ", 1)}</span>
           </div>
         ))}
       </div>
@@ -102,8 +102,8 @@ function App() {
         {!change && (
           <form onSubmit={handleSubmit}>
             <h5>Insira seus dados para reservar</h5>
-            <input type={'text'} placeholder="Nome" ref={nameRef} />
-            <input type={'text'} placeholder="E-mail" ref={emailRef} />
+            <input type={'text'} placeholder="Nome" ref={nameRef} maxLength={35} />
+            <input type={'text'} placeholder="E-mail" ref={emailRef} maxLength={80} />
             <input type={'number'} placeholder="Telefone" ref={phoneRef} />
             <input type={'number'} placeholder="CPF" ref={cpfRef} />
             <input type={'submit'} value="Reservar" style={{ cursor: 'pointer' }} />
