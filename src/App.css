@@ -18,6 +18,8 @@ input {
 button {
   cursor: pointer;
   padding: 10px;
+  width: 320px;
+  height: 40px;
 }
 form {
   border: #000 1px solid;

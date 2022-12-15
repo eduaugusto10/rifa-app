@@ -122,8 +122,8 @@ function App() {
               <span style={{ "fontSize": "10px", backgroundColor: "#fff" }}> {textCopy} </span>
             </button>
             <ul className='pix'>
-              <li>Digite esse número na descrição do seu PIX: <span className='stronger'> 1234</span></li>
-              <li>E assim conseguiremos confirmar o pagamento</li>
+              <li>Insira na descrição do PIX: <span className='stronger'> 1234</span></li>
+              <li>E assim conseguiremos identificar o pagamento</li>
             </ul>
           </div>
         )}
