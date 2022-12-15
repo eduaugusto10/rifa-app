@@ -40,6 +40,12 @@ form {
   border: #000 1px solid;
   width: 50%;
   background-color: #fc8381;
+  padding: 25px;
+  padding-bottom: 40px;
+}
+.stronger {
+  font-weight: bold;
+  font-size: 20px;
 }
 .apresentation {
   display: flex;
@@ -89,10 +95,10 @@ form {
   background-color: #fc8381;
 }
 .reserved {
-  background-color: yellow;
+  background-color: #ff0;
 }
 .sell {
-  background-color: green;
+  background-color: #00ff0f;
 }
 
 @media screen and (max-width: 900px) {
