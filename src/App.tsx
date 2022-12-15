@@ -77,7 +77,7 @@ function App() {
   return (
     <div className="App">
       <div className='header'>
-        <h1>Rifa Solidária - Corrente do Bem</h1>
+        <h1 style={{ color: "#fc8381" }}>Rifa Solidária - Corrente do Bem</h1>
       </div>
       <div className='apresentation'>
         <div className='text-card'>
