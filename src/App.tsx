@@ -77,7 +77,7 @@ function App() {
   return (
     <div className="App">
       <div className='header'>
-        <img className='images' src={require(`./assets/logo.jpeg`)} alt={"jóias"} width={200} height={150} />
+        <h1>Rifa Solidária - Corrente do Bem</h1>
       </div>
       <div className='apresentation'>
         <div className='text-card'>
@@ -90,7 +90,7 @@ function App() {
         </div>
         <img className='images' src={require(`./assets/${numberIMG}.jpeg`)} alt={"jóias"} width={300} height={300} />
       </div>
-      <h4 className='valor-rifa'>O valor da rifa é de R$20,00 e poderá ser pago via PIX ou transferência bancária</h4>
+      <h4 className='valor-rifa'>O valor da rifa é de R$25,00 e poderá ser pago via PIX ou transferência bancária</h4>
       <h4 className='valor-rifa'>Escolha quantos números você quiser!</h4>
       <div className="grid-numbers">
         {rifaNumbers && rifaNumbers.map((rifa, index) => (
@@ -103,7 +103,7 @@ function App() {
       </div>
       <div className='card'>
         <h3>Número(s) escolhido(s): </h3>
-        <h3>Valor total: R$ {chooseNumber.length > 0 ? (chooseNumber.length * 20).toFixed(2) : "0.00"} </h3>
+        <h3>Valor total: R$ {chooseNumber.length > 0 ? (chooseNumber.length * 25).toFixed(2) : "0.00"} </h3>
         {!change && (
           <form className='div-form' onSubmit={handleSubmit}>
             <h3>Insira seus dados para reservar</h3>
