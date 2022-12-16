@@ -44,12 +44,6 @@ function Home() {
         if (nameRef.current?.value != null && emailRef.current?.value != null) {
             const orderGen = Math.round(Math.random() * (99999 - 0 + 1) + 0)
             setOrders(orderGen)
-            history('/payment', {
-                state: {
-                    orderGen,
-                    valueTotal: (chooseNumber.length * 25).toFixed(2)
-                }
-            })
             for (let i = 0; i < chooseNumber.length; i++) {
                 try {
                     api.put(`/rifa/${chooseNumber[i].numbers}`, {
