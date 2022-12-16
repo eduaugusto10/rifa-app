@@ -34,7 +34,7 @@ function Payment() {
             </div>
             <div className='card'>
                 <div className='div-form'>
-                    <h3>Para finalizar faça o PIX</h3>
+                    <h3>Dados para pagamento</h3>
                     <h3 style={{ margin: '0', padding: '0' }}>Valor total: R$ {location.state.valueTotal} </h3>
                     <h3 style={{ margin: '0', padding: '0' }} >Digite na descrição do PIX: <span style={{ backgroundColor: '#fff' }}>{location.state.orderGen}</span></h3>
                     <div style={{ backgroundColor: "#fff", padding: '5px', marginTop: '20px', marginBottom: '20px' }}>
