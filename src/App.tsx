@@ -103,6 +103,11 @@ function App() {
       </div>
       <div className='card'>
         <h3>Número(s) escolhido(s): </h3>
+        <div className='choose-numbers'>
+          {chooseNumber && chooseNumber.map((choose) => (
+            <span>{choose.numbers} , </span>
+          ))}
+        </div>
         <h3>Valor total: R$ {chooseNumber.length > 0 ? (chooseNumber.length * 25).toFixed(2) : "0.00"} </h3>
         {!change && (
           <form className='div-form' onSubmit={handleSubmit}>

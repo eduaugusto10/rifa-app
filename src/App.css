@@ -30,6 +30,10 @@ form {
   padding: 20px;
   margin: 10px;
 }
+.choose-numbers {
+  display: flex;
+  flex-direction: row;
+}
 .header {
   background-color: #fff;
 }
