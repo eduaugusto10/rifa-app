@@ -1,23 +1,11 @@
 import React, { FormEvent, useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import '../../App.css';
-import api from '../../services/api';
 
-interface Rifa {
-    id: number,
-    status: string,
-    name: string,
-    order: number
-}
-interface RifaNum {
-    numbers: number
-}
 function Payment() {
     const location = useLocation()
     const pixKey = "07529555-469d-498e-8c1c-8bc2e37dd29e"
     const [numberIMG, setNumberIMG] = useState<number>(1)
-    const [chooseNumber, setChooseNumber] = useState<RifaNum[]>([])
-    const [orders, setOrders] = useState<number>()
     const [textCopy, setTextCopy] = useState<String>("Copiar chave PIX")
     useEffect(() => {
         const interval = setInterval(() => {
@@ -35,8 +23,8 @@ function Payment() {
             <div className='card'>
                 <div className='div-form'>
                     <h3>Dados para pagamento</h3>
-                    <h3 style={{ margin: '0', padding: '0' }}>Valor total: R$ {location.state.valueTotal} </h3>
-                    <h3 style={{ margin: '0', padding: '0' }} >Digite na descrição do PIX: <span style={{ backgroundColor: '#fff' }}>{location.state.orderGen}</span></h3>
+                    <h3 className='zeroed'>Valor total: R$ {location.state.valueTotal} </h3>
+                    <h3 className='zeroed'>Digite na descrição do PIX: <span style={{ backgroundColor: '#fff' }}>{location.state.orderGen}</span></h3>
                     <div style={{ backgroundColor: "#fff", padding: '5px', marginTop: '20px', marginBottom: '20px' }}>
                         <img src={require('../../assets/pix.png')} width={200} height={71} alt='imagem pix' />
                         <h5 style={{ marginBottom: '0' }}>Chave PIX</h5>

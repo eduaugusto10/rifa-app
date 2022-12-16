@@ -106,7 +106,7 @@ function Home() {
                 ))}
             </div>
             <div className='card' style={{ backgroundColor: '#f7f5f5' }}>
-                <h1>Finalizar e Pagar</h1>
+                <h1>Pagar</h1>
                 <form className='div-form' onSubmit={handleSubmit}>
                     <h3>Número(s) escolhido(s): </h3>
                     <div className='choose-numbers'>
@@ -117,7 +117,7 @@ function Home() {
                     <h3>Valor total: R$ {chooseNumber.length > 0 ? (chooseNumber.length * 25).toFixed(2) : "0.00"} </h3>
                     <h3>Insira seus dados:</h3>
                     <div className='form-input'>
-                        <h4 style={{ paddingLeft: '10px', margin: '0', color: '#000' }}>Nome</h4>
+                        <h4 className='h4adj' >Nome</h4>
                         <input type={'text'} placeholder="Nome*" ref={nameRef} maxLength={35} required />
                         <h4 style={{ paddingLeft: '10px', margin: '0', color: '#000' }}>E-mail</h4>
                         <input type={'text'} placeholder="E-mail*" ref={emailRef} maxLength={80} required />
