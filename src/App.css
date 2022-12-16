@@ -17,9 +17,9 @@ input {
 }
 button {
   cursor: pointer;
-  padding: 10px;
-  width: 320px;
-  height: 40px;
+  padding: 20px;
+  margin: 10px;
+  height: 60px;
 }
 form {
   border: #000 1px solid;
