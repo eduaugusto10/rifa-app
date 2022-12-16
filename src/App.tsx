@@ -12,7 +12,7 @@ interface RifaNum {
   numbers: number
 }
 function App() {
-  const pixKey = "1283754857373628473583"
+  const pixKey = "07529555-469d-498e-8c1c-8bc2e37dd29e"
   const [rifaNumbers, setRifaNumbers] = useState<Rifa[]>([])
   const [numberIMG, setNumberIMG] = useState<number>(1)
   const [chooseNumber, setChooseNumber] = useState<RifaNum[]>([])
