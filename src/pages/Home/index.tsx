@@ -119,7 +119,7 @@ function Home() {
                     <div className='form-input'>
                         <h4 className='h4adj' >Nome</h4>
                         <input type={'text'} placeholder="Nome*" ref={nameRef} maxLength={35} required />
-                        <h4 style={{ paddingLeft: '10px', margin: '0', color: '#000' }}>E-mail</h4>
+                        <h4 className='h4adj'>E-mail</h4>
                         <input type={'text'} placeholder="E-mail*" ref={emailRef} maxLength={80} required />
                         <input type={'submit'} value="Pagar" style={{ cursor: 'pointer', marginLeft: '10px' }} />
                     </div>
