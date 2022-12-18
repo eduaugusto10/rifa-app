@@ -22,6 +22,7 @@ function Home() {
     const [orders, setOrders] = useState<number>()
     const nameRef = useRef<HTMLInputElement | null>(null)
     const emailRef = useRef<HTMLInputElement | null>(null)
+    const emailRecRef = useRef<HTMLInputElement | null>(null)
     const cpfRef = useRef<HTMLInputElement | null>(null)
     const phoneRef = useRef<HTMLInputElement | null>(null)
     useEffect(() => {
@@ -66,6 +67,21 @@ function Home() {
             }
         }
     }
+    const handleFindReserve = (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        try {
+            api.get(`/rifa/${emailRecRef.current?.value}`
+            ).then(res => history('/payment', {
+                state: {
+                    orderGen: res.data.order,
+                    valueTotal: (res.data.length * 25).toFixed(2)
+                }
+            }))
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     const handleReserve = (index: number) => {
         const reserve = [...rifaNumbers]
         const rifaNum = [...chooseNumber]
@@ -98,7 +114,7 @@ function Home() {
             <h4 className='valor-rifa'>O valor de cada número da rifa é de R$25,00 e poderá ser pago via PIX, escolha quantos números você quiser!</h4>
             <div className="grid-numbers">
                 {rifaNumbers && rifaNumbers.map((rifa, index) => (
-                    <div className={`card-number ${rifa.status === "Vendido" ? 'sell' : rifa.status === "Reservado" ? 'reserved' : 'free'}`} key={index} onClick={() => handleReserve(index)}>
+                    <div key={rifa.id} className={`card-number ${rifa.status === "Vendido" ? 'sell' : rifa.status === "Reservado" ? 'reserved' : 'free'}`} onClick={() => handleReserve(index)}>
                         <span >{rifa.status}</span>
                         <span>{rifa.id}</span>
                         <span className='name-buy'>{rifa.name.split(" ", 1)}</span>
@@ -124,16 +140,16 @@ function Home() {
                         <input type={'submit'} value="Pagar" style={{ cursor: 'pointer', marginLeft: '10px' }} />
                     </div>
                 </form>
-                {/* <form className='div-form' onSubmit={handleSubmit}>
+                <form className='div-form' onSubmit={handleFindReserve}>
                     <h3 style={{ margin: '0' }}>**Resgatar reserva**</h3>
                     <h5 style={{ margin: '0' }}>Fiz uma reserva em outro momento mas ainda não paguei!</h5>
                     <h3>Insira seu e-mail cadastrado:</h3>
                     <div className='form-input'>
                         <h4 className='h4adj'>E-mail</h4>
-                        <input type={'text'} placeholder="E-mail*" ref={emailRef} maxLength={80} required />
+                        <input type={'text'} placeholder="E-mail*" ref={emailRecRef} maxLength={80} required />
                         <input type={'submit'} value="Recuperar e Pagar" style={{ cursor: 'pointer', marginLeft: '10px' }} />
                     </div>
-                </form>*/}
+                </form>
                 <h3 style={{ padding: '0', marginTop: '20px', marginBottom: '0' }}>Regras da rifa</h3>
                 <ul style={{ padding: '0', marginTop: '20px' }}>
                     <li> A data prevista para o sorteio sera dia 1/1/2023</li>
