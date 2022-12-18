@@ -4,9 +4,10 @@ import '../../App.css';
 
 function Payment() {
     const location = useLocation()
-    const pixKey = "07529555-469d-498e-8c1c-8bc2e37dd29e"
+    // const pixKey = "07529555-469d-498e-8c1c-8bc2e37dd29e"
+    const pixKey = "amandaescaramal@yahoo.com.br"
     const [numberIMG, setNumberIMG] = useState<number>(1)
-    const [textCopy, setTextCopy] = useState<String>("Copiar chave PIX")
+    const [textCopy, setTextCopy] = useState<String>("Copiar e-mail PIX")
     useEffect(() => {
         const interval = setInterval(() => {
             numberIMG < 6 ? setNumberIMG((previous) => previous + 1) : setNumberIMG(1)
@@ -24,10 +25,10 @@ function Payment() {
                 <div className='div-form'>
                     <h3>Dados para transferência</h3>
                     <h3 className='zeroed'>Valor total: R$ {location.state.valueTotal} </h3>
-                    <h3 className='zeroed'>Faça a tranferência do valor para a seguinte chave aleatória PIX</h3>
+                    <h3 className='zeroed'>Faça a tranferência do valor para a seguinte e-mail via PIX</h3>
                     <div style={{ backgroundColor: "#fff", padding: '5px', marginTop: '20px', marginBottom: '20px' }}>
                         <img src={require('../../assets/pix.png')} width={200} height={71} alt='imagem pix' />
-                        <h5 style={{ marginBottom: '0' }}>Chave aleatória PIX</h5>
+                        <h5 style={{ marginBottom: '0' }}>Chave e-mail PIX</h5>
                         <button
                             onClick={() => {
                                 navigator.clipboard.writeText(pixKey)
