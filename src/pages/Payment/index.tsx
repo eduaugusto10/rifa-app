@@ -22,12 +22,12 @@ function Payment() {
             </div>
             <div className='card'>
                 <div className='div-form'>
-                    <h3>Dados para pagamento</h3>
+                    <h3>Dados para transferência</h3>
                     <h3 className='zeroed'>Valor total: R$ {location.state.valueTotal} </h3>
-                    <h3 className='zeroed'>Digite na descrição do PIX: <span style={{ backgroundColor: '#fff' }}>{location.state.orderGen}</span></h3>
+                    <h3 className='zeroed'>Faça a tranferência do valor para a seguinte chave aleatória PIX</h3>
                     <div style={{ backgroundColor: "#fff", padding: '5px', marginTop: '20px', marginBottom: '20px' }}>
                         <img src={require('../../assets/pix.png')} width={200} height={71} alt='imagem pix' />
-                        <h5 style={{ marginBottom: '0' }}>Chave PIX</h5>
+                        <h5 style={{ marginBottom: '0' }}>Chave aleatória PIX</h5>
                         <button
                             onClick={() => {
                                 navigator.clipboard.writeText(pixKey)
@@ -41,7 +41,6 @@ function Payment() {
                             }}
                             style={{ "fontSize": "13px", backgroundColor: "#fff" }}> {textCopy} </button>
                     </div>
-                    <span>Para conseguir identificar seu pagamento, <strong>não esqueça de inserir na descrição do PIX o número acima.</strong></span >
                 </div>
                 <h3 style={{ padding: '0', marginTop: '20px', marginBottom: '0' }}>Regras da rifa</h3>
                 <ul style={{ padding: '0', marginTop: '20px' }}>
