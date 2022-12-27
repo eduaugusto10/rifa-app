@@ -101,8 +101,9 @@ function Home() {
             </div>
             <div className='apresentation'>
                 <div className='text-card'>
-                    <h4>Este mês resolvi não apenas praticar o voluntariado, participando de ações sociais em ONG's, mas também doar algumas joias minhas
-                        da joalheria HStern para rifa-las e com valor arrecadado montar e doar kits de Natal para crianças de comunidades e em situação de rua. </h4>
+                    <h4>Resolvi não apenas praticar o voluntariado, participando de ações sociais em ONG's, mas também doar algumas joias minhas
+                        da joalheria HStern para rifa-las e com valor arrecadado doar alimentos pesssoas em situação de rua.
+                    </h4>
                     <ul>
                         <li> Conjunto contendo 3 Aneis de ouro rosé 18K, sendo um deles com diamantes cognac - Coleção "MyCollection HStern" (R$ 5.750,00)</li>
                         <li> Colar de ouro rosé e Ouro Nobre 18K com diamantes cognac - Coração flechado- Coleção "MyCollection HStern" (R$ 6.200,00)</li>
