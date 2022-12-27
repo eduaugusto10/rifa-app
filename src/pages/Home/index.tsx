@@ -153,7 +153,7 @@ function Home() {
                 </form>
                 <h3 style={{ padding: '0', marginTop: '20px', marginBottom: '0' }}>Regras da rifa</h3>
                 <ul style={{ padding: '0', marginTop: '20px' }}>
-                    <li> A data prevista para o sorteio sera dia 1/1/2023</li>
+                    <li> A data prevista para o sorteio sera dia 01/02/2023</li>
                     <li> O sorteio dará pelo site <a href="https://sorteador.com.br/sorteio-de-numeros" target={"_blank"} rel={"noopener noreferrer"}>Sorteador</a></li>
                     <li> Toda e qualquer duvida estarei disponível</li>
                 </ul>
